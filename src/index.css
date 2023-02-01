@@ -1,0 +1,15 @@
+/* *
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body { background-color: red; color: #000; font-family: 'Roboto', sans-serif, Arial, Helvetica; font-weight: 400; }
+a:hover { color: #513fdc; text-decoration: none; }
+
+
+img { display: inline-block; height: auto; max-width: 100%; }
+h1, h2, h3, h4, h5, h6 { color: #383874; font-family: 'Poppins', sans-serif; font-weight: 500; }
+h1 { font-size: 48px; }
+p, li { color: #383874; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 300; overflow-wrap: break-word; word-wrap: break-word; } */
