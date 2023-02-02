@@ -8,6 +8,10 @@ import PaymentDetails from "./components/signup/PaymentDetails";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Hosting from "./components/hosting/Hosting";
 import Main from "./components/main/Main";
+import DataConnection from "./components/data_connection/dataConnection";
+import SelectDataStore from "./components/data_connection/selectDataStore";
+import SelectDataUrl from "./components/data_connection/selectDataUrl";
+import SelectAdvOption from "./components/data_connection/showAdvOpt";
 
 
 function App() {
@@ -23,6 +27,10 @@ function App() {
           <Route path="/paymentDetails" element={<PaymentDetails />} />
           <Route path="/hosting" element={<Hosting />} />
           <Route path="/main" element={<Main />} />
+          <Route path="/dataConnection" element={<DataConnection />} />
+          <Route path="/selectDataStore" element={<SelectDataStore />} />
+          <Route path="/selectDataUrl" element={<SelectDataUrl/>} />
+          <Route path="/showAdvOption" element={<SelectAdvOption/>} />
         </Routes>
       </BrowserRouter>
       </div>
