@@ -9,12 +9,12 @@ function Header() {
   return (
     <>
     <header>
-      <div class="row">
-        <div class="col">
+      <div className="row">
+        <div className="col">
         <Link to='/'><img src={logo} alt="AISTUDIO"/></Link>
         </div>
-        <div class="col">
-          <span>Not registered?</span> <Link to='/signup' class="btn btn-sign">sign Up</Link>
+        <div className="col">
+          <span>Not registered?</span> <Link to='/signup' className="btn btn-sign">sign Up</Link>
         </div>
       </div>
     </header>
