@@ -1,5 +1,6 @@
 import React from "react";
 import login from "../assets/images/splash.png";
+import { Link  } from "react-router-dom";
 
 function Login() {
   return (
@@ -44,13 +45,18 @@ function Login() {
 
       <div class="row">
           <div class="col-md-12" style={{paddingTop: "15px"}}>
-              <a routerLink="/screen2" class="col-md-12 btn-block" routerLinkActive="activebutton">
+          <Link to="/signup" class="col-md-12 btn-block" routerLinkActive="activebutton">
                   <button class="btn btn-primary mx-auto" style={{width:'100%', maxWidth:'1280px'}}>Next Page of Product
                       Demo</button>
-              </a>
+                      </Link>
           </div>
       </div>
+
+      
     </section>
+
+  
+
     </>
   );
 }
