@@ -2,7 +2,7 @@ import React from 'react'
 import login from "../assets/images/splash.png";
 import icn_hst from "../assets/images/icn_hst.png";
 import icn_slf from "../assets/images/icn_slf.png";
-
+import { Link  } from "react-router-dom";
 
 function Hosting() {
   return (
@@ -44,10 +44,10 @@ function Hosting() {
 
     <div class="row">
         <div class="col-md-12" style={{paddingTop:"15px"}}>
-            <a routerLink="/screen6" class="col-md-12 btn-block" routerLinkActive="activebutton">
+        <Link to="/main" class="col-md-12 btn-block" routerLinkActive="activebutton">
                 <button class="btn btn-primary mx-auto" style={{width:"100%",maxWidth:"1280px"}}>Next Page of Product
                     Demo</button>
-            </a>
+                    </Link>
         </div>
     </div>
 

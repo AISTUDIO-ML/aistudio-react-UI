@@ -1,4 +1,9 @@
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+// import "../node_modules/bootstrap/dist/js/bootstrap.min.js"; 
+// import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
+// import "../node_modules/bootstrap/dist/js/bootstrap.js"; 
+import "bootstrap/dist/js/bootstrap";
+import $ from "jquery";
 import "./components/style.css";
 import Login from "./components/login/Login";
 import Header from "./components/header/Header";
@@ -8,7 +13,6 @@ import PaymentDetails from "./components/signup/PaymentDetails";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Hosting from "./components/hosting/Hosting";
 import Main from "./components/main/Main";
-
 
 function App() {
   return (
