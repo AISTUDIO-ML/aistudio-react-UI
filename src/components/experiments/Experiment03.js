@@ -9,13 +9,12 @@ import icn_settings_01 from "../assets/images/icn_settings_01.png";
 import icn_refresh_cw from "../assets/images/icn_refresh_cw.png";
 import icn_refresh_cw_01 from "../assets/images/icn_refresh_cw_01.png";
 import tickmark from "../assets/images/tickmark.png";
-
-
-
+import MainHeader from "../header/MainHeader";
 
 function Experiment03() {
   return (
         <>
+        <MainHeader/>
         <section className="projects">
         <div className="row">
             <div className="col">
@@ -67,11 +66,11 @@ function Experiment03() {
                         <div className="col">
                             <ul className="nav nav-tabs" id="myTab" role="tablist">
                                 <li className="nav-item" role="presentation">
-                                    <a className="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                    <a className="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab"
                                         aria-controls="home" aria-selected="true">Experiments</a>
                                 </li>
                                 <li className="nav-item" role="presentation">
-                                    <a className="nav-link" id="models-tab" data-toggle="tab" href="#models" role="tab"
+                                    <a className="nav-link" id="models-tab" data-bs-toggle="tab" href="#models" role="tab"
                                         aria-controls="models" aria-selected="false">Models</a>
                                 </li>
                             </ul>

@@ -1,20 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import dot1 from '../assets/images/dot1.png';
-import dot3 from '../assets/images/dot3.png';
-import dot4 from '../assets/images/dot4.png';
-import icnArchive from '../assets/images/icn_archive.png';
-import icnArchive01 from '../assets/images/icn_archive_01.png';
-import icnSettings from '../assets/images/icn_settings.png';
-import icnSettings01 from '../assets/images/icn_settings_01.png';
-import icnRefreshCw from '../assets/images/icn_refresh_cw.png';
-import icnRefreshCw01 from '../assets/images/icn_refresh_cw_01.png';
-import map from '../assets/images/map.png';
-import trendingUp from '../assets/images/trending-up.png';
-import target from '../assets/images/target.png';
-import zap from '../assets/images/zap.png';
-import chevronsRight from '../assets/images/chevrons-right.png';
-import share2 from '../assets/images/share-2.png';
 import tickmark from '../assets/images/tickmark.png';
 import avatar from '../assets/images/avatar.png';
 import clock0l from '../assets/images/clock_0l.png';
@@ -23,14 +8,15 @@ import bullet02 from '../assets/images/bullet_02.png';
 import bullet03 from '../assets/images/bullet_03.png';
 import bullet01 from '../assets/images/bullet_01.png';
 import bullet04 from '../assets/images/bullet_04.png';
-import bullet05 from '../assets/images/bullet_05.png';
 import bullet06 from '../assets/images/bullet_06.png';
 import bullet07 from '../assets/images/bullet_07.png';
 import bullet08 from '../assets/images/bullet_08.png';
+import MainHeader from "../header/MainHeader";
 
 function OverView02() {
 
     return (
+        <><MainHeader/>
         <section className="experiment">
         <div className="top-panel btmspc">
             <div className="row">
@@ -39,11 +25,11 @@ function OverView02() {
                         <div className="col">
                             <ul className="nav nav-tabs expils" id="myTab" role="tablist">
                                 <li className="nav-item" role="presentation">
-                                    <a className="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                    <a className="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab"
                                         aria-controls="home" aria-selected="true">Experiments</a>
                                 </li>
                                 <li className="nav-item" role="presentation">
-                                    <a className="nav-link" id="models-tab" data-toggle="tab" href="#models" role="tab"
+                                    <a className="nav-link" id="models-tab" data-bs-toggle="tab" href="#models" role="tab"
                                         aria-controls="models" aria-selected="false">Models</a>
                                 </li>
                             </ul>
@@ -218,17 +204,17 @@ function OverView02() {
                                             <div className="col">
                                                 <ul className="nav nav-tabs" id="myTab" role="tablist">
                                                     <li className="nav-item" role="presentation">
-                                                        <a className="nav-link active" id="general-tab" data-toggle="tab"
+                                                        <a className="nav-link active" id="general-tab" data-bs-toggle="tab"
                                                             href="#general" role="tab" aria-controls="general"
                                                             aria-selected="true">General</a>
                                                     </li>
                                                     <li className="nav-item" role="presentation">
-                                                        <a className="nav-link" id="network-tab" data-toggle="tab"
+                                                        <a className="nav-link" id="network-tab" data-bs-toggle="tab"
                                                             href="#network" role="tab" aria-controls="network"
                                                             aria-selected="false">Network</a>
                                                     </li>
                                                     <li className="nav-item" role="presentation">
-                                                        <a className="nav-link" id="labels-tab" data-toggle="tab" href="#labels"
+                                                        <a className="nav-link" id="labels-tab" data-bs-toggle="tab" href="#labels"
                                                             role="tab" aria-controls="labels"
                                                             aria-selected="false">Labels</a>
                                                     </li>
@@ -441,16 +427,16 @@ function OverView02() {
                 <p>Models content here.....</p>
             </div>
         </div>
-    
         <div className="row">
         <div className="col-md-12" style={{ paddingTop: "15px" }}>
-                    <Link to="/advanceoption02" className="col-md-12 btn-block" routerLinkActive="activebutton">
+                    <Link to="/model01" className="col-md-12 btn-block" routerLinkActive="activebutton">
                         <button className="btn btn-primary mx-auto" style={{ width: "100%", maxWidth: "1280px" }}>Next Page of Product
                             Demo</button>
                     </Link>
                 </div>
         </div>
-    </section>
+        </section>
+        </>
     );
 }
 export default OverView02;

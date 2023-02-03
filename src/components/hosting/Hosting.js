@@ -3,10 +3,12 @@ import login from "../assets/images/splash.png";
 import icn_hst from "../assets/images/icn_hst.png";
 import icn_slf from "../assets/images/icn_slf.png";
 import { Link  } from "react-router-dom";
+import Header from '../header/Header';
 
 function Hosting() {
   return (
     <>
+    {/* <Header/> */}
     <section className="main">
     <div className="row">
         <div className="col">

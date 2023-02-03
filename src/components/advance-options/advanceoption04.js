@@ -9,10 +9,12 @@ import status01 from '../assets/images/status_01.png';
 import tickmark from '../assets/images/tickmark.png';
 import icnTgleLft from '../assets/images/icn_tgle_lft.png';
 import icnInfo01 from '../assets/images/icn_info_01.png';
+import MainHeader from "../header/MainHeader";
 
 function Advanceoption04() {
 
   return (
+    <><MainHeader/>
     <section className="advance-option">
     <div className="row">
       <div className="col col-md-8 col-lg-9 main-section">
@@ -21,16 +23,16 @@ function Advanceoption04() {
         <h5>Advanced Options</h5>
         <ul className="nav nav-tabs" id="myTab" role="tablist">
           <li className="nav-item" role="presentation">
-            <a className="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Partitioning</a>
+            <a className="nav-link" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Partitioning</a>
           </li>
           <li className="nav-item" role="presentation">
-            <a className="nav-link" id="smart-tab" data-toggle="tab" href="#smart" role="tab" aria-controls="smart" aria-selected="false">Smart Downsampling</a>
+            <a className="nav-link" id="smart-tab" data-bs-toggle="tab" href="#smart" role="tab" aria-controls="smart" aria-selected="false">Smart Downsampling</a>
           </li>
           <li className="nav-item" role="presentation">
-            <a className="nav-link" id="feature-tab" data-toggle="tab" href="#feature" role="tab" aria-controls="feature" aria-selected="false">Feature Consraints</a>
+            <a className="nav-link" id="feature-tab" data-bs-toggle="tab" href="#feature" role="tab" aria-controls="feature" aria-selected="false">Feature Consraints</a>
           </li>
           <li className="nav-item" role="presentation">
-            <a className="nav-link active" id="additional-tab" data-toggle="tab" href="#additional" role="tab" aria-controls="additional" aria-selected="false">Additional</a>
+            <a className="nav-link active" id="additional-tab" data-bs-toggle="tab" href="#additional" role="tab" aria-controls="additional" aria-selected="false">Additional</a>
           </li>
         </ul>
         <div className="tab-content" id="myTabContent">
@@ -38,19 +40,19 @@ function Advanceoption04() {
             <h5>Select partitioning method:</h5>
             <ul className="nav nav-pills mbw-3 mb-3" id="pills-tab" role="tablist">
               <li className="nav-item" role="presentation">
-                <a className="nav-link active" id="pills-random-tab" data-toggle="pill" href="#pills-random" role="tab" aria-controls="pills-random" aria-selected="true">Random</a>
+                <a className="nav-link active" id="pills-random-tab" data-bs-toggle="pill" href="#pills-random" role="tab" aria-controls="pills-random" aria-selected="true">Random</a>
               </li>
               <li className="nav-item" role="presentation">
-                <a className="nav-link" id="pills-partition-tab" data-toggle="pill" href="#pills-partition" role="tab" aria-controls="pills-partition" aria-selected="false">Partition Feature</a>
+                <a className="nav-link" id="pills-partition-tab" data-bs-toggle="pill" href="#pills-partition" role="tab" aria-controls="pills-partition" aria-selected="false">Partition Feature</a>
               </li>
               <li className="nav-item" role="presentation">
-                <a className="nav-link" id="pills-group-tab" data-toggle="pill" href="#pills-group" role="tab" aria-controls="pills-group" aria-selected="false">Group</a>
+                <a className="nav-link" id="pills-group-tab" data-bs-toggle="pill" href="#pills-group" role="tab" aria-controls="pills-group" aria-selected="false">Group</a>
               </li>
               <li className="nav-item" role="presentation">
-                <a className="nav-link" id="pills-date-tab" data-toggle="pill" href="#pills-date" role="tab" aria-controls="pills-date" aria-selected="false">Date/Time</a>
+                <a className="nav-link" id="pills-date-tab" data-bs-toggle="pill" href="#pills-date" role="tab" aria-controls="pills-date" aria-selected="false">Date/Time</a>
               </li>
               <li className="nav-item" role="presentation">
-                <a className="nav-link" id="pills-stratified-tab" data-toggle="pill" href="#pills-stratified" role="tab" aria-controls="pills-stratified" aria-selected="false">Stratified</a>
+                <a className="nav-link" id="pills-stratified-tab" data-bs-toggle="pill" href="#pills-stratified" role="tab" aria-controls="pills-stratified" aria-selected="false">Stratified</a>
               </li>
             </ul>
             <div className="tab-content" id="pills-tabContent">
@@ -74,10 +76,10 @@ function Advanceoption04() {
             <h5>Run models using:</h5>
             <ul className="nav nav-pills mbw-2 mb-3" id="pills-tab" role="tablist">
               <li className="nav-item" role="presentation">
-                <a className="nav-link active" id="pills-cross-tab" data-toggle="pill" href="#pills-cross" role="tab" aria-controls="pills-cross" aria-selected="true">Cross-validation</a>
+                <a className="nav-link active" id="pills-cross-tab" data-bs-toggle="pill" href="#pills-cross" role="tab" aria-controls="pills-cross" aria-selected="true">Cross-validation</a>
               </li>
               <li className="nav-item" role="presentation">
-                <a className="nav-link" id="pills-train-tab" data-toggle="pill" href="#pills-train" role="tab" aria-controls="pills-train" aria-selected="false">Train-Validation-Holdout</a>
+                <a className="nav-link" id="pills-train-tab" data-bs-toggle="pill" href="#pills-train" role="tab" aria-controls="pills-train" aria-selected="false">Train-Validation-Holdout</a>
               </li>
             </ul>
             <div className="tab-content" id="pills-tabContent">
@@ -135,10 +137,10 @@ function Advanceoption04() {
             <h5>Run models using:</h5>
             <ul className="nav nav-pills mbw-2 mb-3" id="pills-tab" role="tablist">
               <li className="nav-item" role="presentation">
-                <a className="nav-link active" id="pills-explore-tab" data-toggle="pill" href="#pills-explore" role="tab" aria-controls="pills-explore" aria-selected="true">Explore</a>
+                <a className="nav-link active" id="pills-explore-tab" data-bs-toggle="pill" href="#pills-explore" role="tab" aria-controls="pills-explore" aria-selected="true">Explore</a>
               </li>
               <li className="nav-item" role="presentation">
-                <a className="nav-link" id="pills-trainVH-tab" data-toggle="pill" href="#pills-trainVH" role="tab" aria-controls="pills-trainVH" aria-selected="false">Train-Validation-Holdout</a>
+                <a className="nav-link" id="pills-trainVH-tab" data-bs-toggle="pill" href="#pills-trainVH" role="tab" aria-controls="pills-trainVH" aria-selected="false">Train-Validation-Holdout</a>
               </li>
             </ul>
             <div className="tab-content" id="pills-tabContent">
@@ -253,7 +255,7 @@ function Advanceoption04() {
             <form>
               <div className="row">
                 <div className="form-group col-md-7 recom">
-                  <input className="form-control" type="text" placeholder="Default"/>
+                  <input className="form-control" type="text" placeholder="Default" required/>
                 </div>
               </div>
             </form>
@@ -266,7 +268,7 @@ function Advanceoption04() {
             <form>
               <div className="row">
                 <div className="form-group col-md-7 recom">
-                  <input className="form-control" type="text" placeholder="3"/>
+                  <input className="form-control" type="text" placeholder="3" required/>
                 </div>
               </div>
             </form>
@@ -332,13 +334,14 @@ function Advanceoption04() {
 
      <div className="row">
      <div className="col-md-12" style={{paddingTop:"15px"}}>
-            <Link to="/advanceoption03" className="col-md-12 btn-block" routerLinkActive="activebutton">
+            <Link to="/projects_update" className="col-md-12 btn-block" routerLinkActive="activebutton">
                     <button className="btn btn-primary mx-auto" style={{width:"100%",maxWidth:"1280px"}}>Next Page of Product
                         Demo</button>
                 </Link>
             </div>
       </div>
   </section>
+  </>
   );
 }
 

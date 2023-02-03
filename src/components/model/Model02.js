@@ -8,22 +8,16 @@ import worker from "../assets/images/worker.png";
 import worker_01 from "../assets/images/worker_01.png";
 import reload from "../assets/images/reload.png";
 import unlock from "../assets/images/unlock.png";
-import loader from "../assets/images/loader.png";
-import loader_01 from "../assets/images/loader_01.png";
-import person from "../assets/images/person.png";
-import clock_0l from "../assets/images/clock_0l.png";
-import plus from "../assets/images/plus.png";
 import tickmark from "../assets/images/tickmark.png";
 import status from "../assets/images/status.png";
 import status_01 from "../assets/images/status_01.png";
-
-
-
+import MainHeader from "../header/MainHeader";
 
 
 function Model02() {
   return (
         <>
+        <MainHeader/>
         <section className="table-date">
         <div className="row">
           <div className="col col-md-8 col-lg-9 main-section">
@@ -353,7 +347,6 @@ function Model02() {
           </Link>
         </div>
       </div>
-   
       </section>
         </>
   )

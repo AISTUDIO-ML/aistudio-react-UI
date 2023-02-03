@@ -15,11 +15,12 @@ import icnCog from '../assets/images/icn_cog.png';
 import diaStart from '../assets/images/dia-start.png';
 import toggle from '../assets/images/toggle.png';
 import diagram from '../assets/images/diagram.png';
+import MainHeader from "../header/MainHeader";
 
 function StatisticsExpand(){
 
     return (
-
+<><MainHeader/>
         <section className="table-date">
         <div className="row">
             <div className="col col-md-8 col-lg-9 main-section">
@@ -191,13 +192,14 @@ function StatisticsExpand(){
        
         <div className="row">
         <div className="col-md-12" style={{ paddingTop: "15px" }}>
-                    <Link to="/advanceoption02" className="col-md-12 btn-block" routerLinkActive="activebutton">
+                    <Link to="/advanceoption01" className="col-md-12 btn-block" routerLinkActive="activebutton">
                         <button className="btn btn-primary mx-auto" style={{ width: "100%", maxWidth: "1280px" }}>Next Page of Product
                             Demo</button>
                     </Link>
       </div>
         </div>
     </section>
+    </>
     );
 }
 export default StatisticsExpand;

@@ -2,11 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import close from "../assets/images/close.png";
 import icnTrash from "../assets/images/icn_trash.png";
+import MainHeader from "../header/MainHeader";
 
 
 function SelectDataStore() {
 
   return (
+    <>
+    <MainHeader/>
     <section className="project">
     <div className="row">
       <div className="col">
@@ -57,18 +60,7 @@ function SelectDataStore() {
             </div>
             <div className="form-group group">
               <div className="row">
-                <div className="col">
-                  <input type="text" className="form-control" placeholder="AWS Athena 2.0 (2.0.5)"/>
-                </div>
-                <div className="col">
-                  <input type="text" className="form-control" placeholder="AWS Athena 2.0 (2.0.5)"/>
-                </div>
-                <a href="#" className="delete">
-                    <img src={icnTrash} alt=""/></a>
-              </div>
-            </div>
-            <div className="form-group group">
-              <div className="row">
+                <div className="roww">
                 <div className="col">
                   <input type="text" className="form-control" placeholder="AWS Athena 2.0 (2.0.5)"/>
                 </div>
@@ -77,29 +69,45 @@ function SelectDataStore() {
                 </div>
                 <a href="#" className="delete"><img src={icnTrash} alt=""/></a>
               </div>
-            </div>
-            <div className="form-group group">
-              <div className="row">
-                <div className="col">
-                  <input type="text" className="form-control" placeholder="AWS Athena 2.0 (2.0.5)"/>
-                </div>
-                <div className="col">
-                  <input type="text" className="form-control" placeholder="AWS Athena 2.0 (2.0.5)"/>
-                </div>
-                <a href="#" className="delete">
-                    <img src={icnTrash} alt="" /></a>
               </div>
             </div>
             <div className="form-group group">
               <div className="row">
+                <div className="roww">
                 <div className="col">
                   <input type="text" className="form-control" placeholder="AWS Athena 2.0 (2.0.5)"/>
                 </div>
                 <div className="col">
                   <input type="text" className="form-control" placeholder="AWS Athena 2.0 (2.0.5)"/>
                 </div>
-                <a href="#" className="delete">
-                    <img src={icnTrash} alt=""/></a>
+                <a href="#" className="delete"><img src={icnTrash} alt=""/></a>
+              </div>
+              </div>
+            </div>
+            <div className="form-group group">
+              <div className="row">
+                <div className="roww">
+                <div className="col">
+                  <input type="text" className="form-control" placeholder="AWS Athena 2.0 (2.0.5)"/>
+                </div>
+                <div className="col">
+                  <input type="text" className="form-control" placeholder="AWS Athena 2.0 (2.0.5)"/>
+                </div>
+                <a href="#" className="delete"><img src={icnTrash} alt=""/></a>
+              </div>
+              </div>
+            </div>
+            <div className="form-group group">
+              <div className="row">
+                <div className="roww">
+                <div className="col">
+                  <input type="text" className="form-control" placeholder="AWS Athena 2.0 (2.0.5)"/>
+                </div>
+                <div className="col">
+                  <input type="text" className="form-control" placeholder="AWS Athena 2.0 (2.0.5)"/>
+                </div>
+                <a href="#" className="delete"><img src={icnTrash} alt=""/></a>
+              </div>
               </div>
             </div>
             <div className="form-group">
@@ -124,6 +132,7 @@ function SelectDataStore() {
       </div>
     </div>
   </section>
+  </>
   );
 }
 

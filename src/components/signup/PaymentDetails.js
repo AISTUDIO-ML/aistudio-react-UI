@@ -1,10 +1,12 @@
 import React from 'react'
 import card from "../assets/images/card.png";
 import { Link  } from "react-router-dom";
+import Header from '../header/Header';
 
 function PaymentDetails() {
   return (
     <>
+    <Header/>
     <section className="main">
     <div className="row">
         <div className="col">

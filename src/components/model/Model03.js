@@ -6,16 +6,16 @@ import filter from "../assets/images/filter.png";
 import data from "../assets/images/data.png";
 import worker from "../assets/images/worker.png";
 import worker_01 from "../assets/images/worker_01.png";
-
 import plus from "../assets/images/plus.png";
 import tickmark from "../assets/images/tickmark.png";
 import status from "../assets/images/status.png";
 import status_01 from "../assets/images/status_01.png";
+import MainHeader from "../header/MainHeader";
 
 function Model03() {
     return (
             <>
-            
+            <MainHeader/>
             <section className="table-date">
             <div className="row">
                 <div className="col col-md-8 col-lg-9 main-section">

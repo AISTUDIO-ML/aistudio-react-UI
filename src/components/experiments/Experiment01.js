@@ -10,10 +10,12 @@ import icn_settings_01 from "../assets/images/icn_settings_01.png";
 import icn_refresh_cw from "../assets/images/icn_refresh_cw.png";
 import icn_refresh_cw_01 from "../assets/images/icn_refresh_cw_01.png";
 import icn_pls from "../assets/images/icn_pls.png";
+import MainHeader from "../header/MainHeader";
 
 function Experiment01() {
   return (
     <>
+    <MainHeader/>
       <section className="projects">
         <div className="row">
           <div className="col">
@@ -84,7 +86,7 @@ function Experiment01() {
                       <a
                         className="nav-link active"
                         id="home-tab"
-                        data-toggle="tab"
+                        data-bs-toggle="tab"
                         href="#home"
                         role="tab"
                         aria-controls="home"
@@ -97,7 +99,7 @@ function Experiment01() {
                       <a
                         className="nav-link"
                         id="models-tab"
-                        data-toggle="tab"
+                        data-bs-toggle="tab"
                         href="#models"
                         role="tab"
                         aria-controls="models"

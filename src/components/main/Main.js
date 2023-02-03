@@ -2,11 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import arw_dwn from "../assets/images/arw_dwn.png";
 import icn_pls from "../assets/images/icn_pls.png";
-import { Link  } from "react-router-dom";
+import MainHeader from '../header/MainHeader';
 
 function Main() {
   return (
         <>
+        <MainHeader/>
         <section className="project">
         <div className="row">
             <div className="col col-md-8 col-lg-9">
@@ -17,19 +18,19 @@ function Main() {
                                 <h2>Get started by dragging here, or import from</h2>
                                 <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                     <li className="nav-item" role="presentation">
-                                        <a className="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home"
+                                        <a className="nav-link active" id="pills-home-tab" data-bs-toggle="pill" href="#pills-home"
                                             role="tab" aria-controls="pills-home" aria-selected="true">Data Source</a>
                                     </li>
                                     <li className="nav-item" role="presentation">
-                                        <a className="nav-link" id="pills-URL-tab" data-toggle="pill" href="#pills-URL"
+                                        <a className="nav-link" id="pills-URL-tab" data-bs-toggle="pill" href="#pills-URL"
                                             role="tab" aria-controls="pills-URL" aria-selected="false">URL</a>
                                     </li>
                                     <li className="nav-item" role="presentation">
-                                        <a className="nav-link" id="pills-HDFS-tab" data-toggle="pill" href="#pills-HDFS"
+                                        <a className="nav-link" id="pills-HDFS-tab" data-bs-toggle="pill" href="#pills-HDFS"
                                             role="tab" aria-controls="pills-HDFS" aria-selected="false">HDFS</a>
                                     </li>
                                     <li className="nav-item" role="presentation">
-                                        <a className="nav-link" id="pills-Local-tab" data-toggle="pill" href="#pills-Local"
+                                        <a className="nav-link" id="pills-Local-tab" data-bs-toggle="pill" href="#pills-Local"
                                             role="tab" aria-controls="pills-Local" aria-selected="false">Local File</a>
                                     </li>
                                 </ul>
@@ -173,7 +174,7 @@ function Main() {
         <div className="row">
         <div className="col-md-12" style={{ paddingTop: "15px" }}>
           <Link
-            to="/projectdetails"
+            to="/dataConnection"
             className="col-md-12 btn-block"
             routerLinkActive="activebutton"
           >

@@ -5,10 +5,12 @@ import arrowLeft from '../assets/images/arrow-left.png';
 import diagram03 from '../assets/images/diagram_03.png';
 import diagram04 from '../assets/images/diagram_04.png';
 import upload from '../assets/images/upload.png';
+import MainHeader from "../header/MainHeader";
 
 function OverView() {
 
   return (
+    <><MainHeader/>
     <section className="experiment">
     <div className="row">
         <div className="col">
@@ -29,27 +31,27 @@ function OverView() {
                     <div className="col">
                         <ul className="nav nav-tabs mvlrgt" id="myTab" role="tablist">
                             <li className="nav-item" role="presentation">
-                                <a className="nav-link active" id="overview-tab" data-toggle="tab" href="#overview"
+                                <a className="nav-link active" id="overview-tab" data-bs-toggle="tab" href="#overview"
                                     role="tab" aria-controls="overview" aria-selected="true">Overview</a>
                             </li>
                             <li className="nav-item" role="presentation">
-                                <a className="nav-link" id="execution-tab" data-toggle="tab" href="#execution" role="tab"
+                                <a className="nav-link" id="execution-tab" data-bs-toggle="tab" href="#execution" role="tab"
                                     aria-controls="execution" aria-selected="false">execution</a>
                             </li>
                             <li className="nav-item" role="presentation">
-                                <a className="nav-link" id="configuration-tab" data-toggle="tab" href="#configuration"
+                                <a className="nav-link" id="configuration-tab" data-bs-toggle="tab" href="#configuration"
                                     role="tab" aria-controls="configuration" aria-selected="false">Configuration</a>
                             </li>
                             <li className="nav-item" role="presentation">
-                                <a className="nav-link" id="artifacts-tab" data-toggle="tab" href="#artifacts" role="tab"
+                                <a className="nav-link" id="artifacts-tab" data-bs-toggle="tab" href="#artifacts" role="tab"
                                     aria-controls="artifacts" aria-selected="false">Artifacts</a>
                             </li>
                             <li className="nav-item" role="presentation">
-                                <a className="nav-link" id="info-tab" data-toggle="tab" href="#info" role="tab"
+                                <a className="nav-link" id="info-tab" data-bs-toggle="tab" href="#info" role="tab"
                                     aria-controls="info" aria-selected="false">Info</a>
                             </li>
                             <li className="nav-item" role="presentation">
-                                <a className="nav-link" id="results-tab" data-toggle="tab" href="#results" role="tab"
+                                <a className="nav-link" id="results-tab" data-bs-toggle="tab" href="#results" role="tab"
                                     aria-controls="results" aria-selected="false">Results</a>
                             </li>
                         </ul>
@@ -62,19 +64,19 @@ function OverView() {
         <div className="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
             <ul className="nav nav-pills mnu-button mb-3 lftclear" id="pills-tab" role="tablist">
                 <li className="nav-item" role="presentation">
-                    <a className="nav-link active" id="pills-random-tab" data-toggle="pill" href="#pills-random" role="tab"
+                    <a className="nav-link active" id="pills-random-tab" data-bs-toggle="pill" href="#pills-random" role="tab"
                         aria-controls="pills-random" aria-selected="true">Explore</a>
                 </li>
                 <li className="nav-item" role="presentation">
-                    <a className="nav-link" id="pills-partition-tab" data-toggle="pill" href="#pills-partition" role="tab"
+                    <a className="nav-link" id="pills-partition-tab" data-bs-toggle="pill" href="#pills-partition" role="tab"
                         aria-controls="pills-partition" aria-selected="false">Understand</a>
                 </li>
                 <li className="nav-item" role="presentation">
-                    <a className="nav-link" id="pills-group-tab" data-toggle="pill" href="#pills-group" role="tab"
+                    <a className="nav-link" id="pills-group-tab" data-bs-toggle="pill" href="#pills-group" role="tab"
                         aria-controls="pills-group" aria-selected="false">Predict</a>
                 </li>
                 <li className="nav-item" role="presentation">
-                    <a className="nav-link" id="pills-date-tab" data-toggle="pill" href="#pills-date" role="tab"
+                    <a className="nav-link" id="pills-date-tab" data-bs-toggle="pill" href="#pills-date" role="tab"
                         aria-controls="pills-date" aria-selected="false">Compliance</a>
                 </li>
             </ul>
@@ -215,13 +217,14 @@ function OverView() {
 
     <div className="row">
     <div className="col-md-12" style={{paddingTop:"15px"}}>
-            <Link to="/advanceoption02" className="col-md-12 btn-block" routerLinkActive="activebutton">
+            <Link to="/overview01" className="col-md-12 btn-block" routerLinkActive="activebutton">
                     <button className="btn btn-primary mx-auto" style={{width:"100%",maxWidth:"1280px"}}>Next Page of Product
                         Demo</button>
                 </Link>
             </div>
     </div>
 </section>
+</>
   );
 }
 

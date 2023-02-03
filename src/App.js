@@ -17,7 +17,6 @@ import DataConnection from "./components/data_connection/dataConnection";
 import SelectDataStore from "./components/data_connection/selectDataStore";
 import SelectDataUrl from "./components/data_connection/selectDataUrl";
 import SelectAdvOption from "./components/data_connection/showAdvOpt";
-import MainHeader from "./components/header/MainHeader";
 import Advanceoption01 from "./components/advance-options/advanceoption01";
 import Advanceoption02 from "./components/advance-options/advanceoption02";
 import Advanceoption03 from "./components/advance-options/advanceoption03";
@@ -36,15 +35,15 @@ import Model02 from "./components/model/Model02";
 import Model03 from "./components/model/Model03";
 
 import ProjectDetails from "./components/project-details/ProjectDetails";
+import MainLearnMore from "./components/data_connection/main-learn-more.component";
 
 
 function App() {
   return (
     <>
+    
     <div class="container">
-      <BrowserRouter>
-      <MainHeader/>
-        {/* <Header /> */}
+      <BrowserRouter>        
           <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
@@ -56,16 +55,23 @@ function App() {
           <Route path="/selectDataStore" element={<SelectDataStore />} />
           <Route path="/selectDataUrl" element={<SelectDataUrl/>} />
           <Route path="/showAdvOption" element={<SelectAdvOption/>} />
+          <Route path="/mainLearnMore" element={<MainLearnMore/>} />
+
+          <Route path="/statistics" element={<Statistics/>} />
+          <Route path="/statistics_expand" element={<StatisticsExpand/>} />
+
           <Route path="/advanceoption01" element={<Advanceoption01/>} />
           <Route path="/advanceoption02" element={<Advanceoption02/>} />
           <Route path="/advanceoption03" element={<Advanceoption03/>} />
           <Route path="/advanceoption04" element={<Advanceoption04/>} />
+
+          <Route path="/projects_update" element={<ProjectUpdates/>} />
+          <Route path="/projectdetails" element={<ProjectDetails />} />
+
           <Route path="/overview" element={<OverView/>} />
           <Route path="/overview01" element={<OverView01/>} />
           <Route path="/overview02" element={<OverView02/>} />
-          <Route path="/statistics" element={<Statistics/>} />
-          <Route path="/statistics_expand" element={<StatisticsExpand/>} />
-          <Route path="/projects_update" element={<ProjectUpdates/>} />
+
 
           <Route path="/experiment01" element={<Experiment01 />} />
           <Route path="/experiment02" element={<Experiment02 />} />
@@ -76,7 +82,6 @@ function App() {
           <Route path="/model03" element={<Model03 />} />
 
 
-          <Route path="/projectdetails" element={<ProjectDetails />} />
 
 
 

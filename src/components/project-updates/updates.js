@@ -5,10 +5,12 @@ import results from '../assets/images/results.png';
 import diagram01 from '../assets/images/diagram_01.png';
 import tickmark from '../assets/images/tickmark.png';
 import { Link } from "react-router-dom";
+import MainHeader from "../header/MainHeader";
 
 function ProjectUpdates() {
 
   return (
+    <><MainHeader/>
     <section class="projects">
     <div class="row">
         <div class="col">
@@ -161,13 +163,14 @@ function ProjectUpdates() {
 
     <div class="row">
     <div className="col-md-12" style={{paddingTop:"15px"}}>
-            <Link to="/advanceoption02" className="col-md-12 btn-block" routerLinkActive="activebutton">
+            <Link to="/projectdetails" className="col-md-12 btn-block" routerLinkActive="activebutton">
                     <button className="btn btn-primary mx-auto" style={{width:"100%",maxWidth:"1280px"}}>Next Page of Product
                         Demo</button>
                 </Link>
             </div> 
     </div>
 </section>
+</>
   );
 }
 

@@ -1,10 +1,12 @@
 import React from 'react'
 import login from "../assets/images/splash.png";
 import { Link  } from "react-router-dom";
+import Header from '../header/Header';
 
 function MoreSteps() {
   return (
     <>
+    <Header/>
     <section className="main">
     <div className="row">
         <div className="col">

@@ -2,11 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import close from "../assets/images/close.png";
 import icnTrash from "../assets/images/icn_trash.png";
+import MainHeader from "../header/MainHeader";
 
 
 function SelectDataUrl() {
 
-  return (
+  return (<>
+  <MainHeader/>
     <section className="project">
     <div className="row">
         <div className="col">
@@ -81,7 +83,8 @@ function SelectDataUrl() {
             </div>
         </div>
     </div>
-</section>
+</section></>
+    
   );
 }
 

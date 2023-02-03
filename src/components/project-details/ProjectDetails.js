@@ -24,10 +24,12 @@ import bullet_07 from "../assets/images/bullet_07.png";
 import bullet_08 from "../assets/images/bullet_08.png";
 import logout from "../assets/images/log-out.png";
 import upload from "../assets/images/upload.png";
+import MainHeader from "../header/MainHeader";
 
 function ProjectDetails() {
   return (
     <>
+    <MainHeader/>
       <section className="experiment">
         <div className="top-panel btmspc">
           <div className="row">
@@ -39,7 +41,7 @@ function ProjectDetails() {
                       <a
                         className="nav-link active"
                         id="home-tab"
-                        data-toggle="tab"
+                        data-bs-toggle="tab"
                         href="#home"
                         role="tab"
                         aria-controls="home"
@@ -52,7 +54,7 @@ function ProjectDetails() {
                       <a
                         className="nav-link"
                         id="models-tab"
-                        data-toggle="tab"
+                        data-bs-toggle="tab"
                         href="#models"
                         role="tab"
                         aria-controls="models"
@@ -289,7 +291,7 @@ function ProjectDetails() {
                                 <a
                                   className="nav-link"
                                   id="overview-tab"
-                                  data-toggle="tab"
+                                  data-bs-toggle="tab"
                                   href="#overview"
                                   role="tab"
                                   aria-controls="overview"
@@ -302,7 +304,7 @@ function ProjectDetails() {
                                 <a
                                   className="nav-link"
                                   id="execution-tab"
-                                  data-toggle="tab"
+                                  data-bs-toggle="tab"
                                   href="#execution"
                                   role="tab"
                                   aria-controls="execution"
@@ -315,7 +317,7 @@ function ProjectDetails() {
                                 <a
                                   className="nav-link"
                                   id="configuration-tab"
-                                  data-toggle="tab"
+                                  data-bs-toggle="tab"
                                   href="#configuration"
                                   role="tab"
                                   aria-controls="configuration"
@@ -328,7 +330,7 @@ function ProjectDetails() {
                                 <a
                                   className="nav-link active"
                                   id="artifacts-tab"
-                                  data-toggle="tab"
+                                  data-bs-toggle="tab"
                                   href="#artifacts"
                                   role="tab"
                                   aria-controls="artifacts"
@@ -341,7 +343,7 @@ function ProjectDetails() {
                                 <a
                                   className="nav-link"
                                   id="info-tab"
-                                  data-toggle="tab"
+                                  data-bs-toggle="tab"
                                   href="#info"
                                   role="tab"
                                   aria-controls="info"
@@ -354,7 +356,7 @@ function ProjectDetails() {
                                 <a
                                   className="nav-link"
                                   id="results-tab"
-                                  data-toggle="tab"
+                                  data-bs-toggle="tab"
                                   href="#results"
                                   role="tab"
                                   aria-controls="results"
@@ -390,7 +392,7 @@ function ProjectDetails() {
                               <a
                                 className="nav-link"
                                 id="pills-random-tab"
-                                data-toggle="pill"
+                                data-bs-toggle="pill"
                                 href="#pills-random"
                                 role="tab"
                                 aria-controls="pills-random"
@@ -403,7 +405,7 @@ function ProjectDetails() {
                               <a
                                 className="nav-link active"
                                 id="pills-partition-tab"
-                                data-toggle="pill"
+                                data-bs-toggle="pill"
                                 href="#pills-partition"
                                 role="tab"
                                 aria-controls="pills-partition"
@@ -416,7 +418,7 @@ function ProjectDetails() {
                               <a
                                 className="nav-link"
                                 id="pills-group-tab"
-                                data-toggle="pill"
+                                data-bs-toggle="pill"
                                 href="#pills-group"
                                 role="tab"
                                 aria-controls="pills-group"
@@ -429,7 +431,7 @@ function ProjectDetails() {
                               <a
                                 className="nav-link"
                                 id="pills-date-tab"
-                                data-toggle="pill"
+                                data-bs-toggle="pill"
                                 href="#pills-date"
                                 role="tab"
                                 aria-controls="pills-date"
@@ -839,7 +841,7 @@ function ProjectDetails() {
         <div className="row">
         <div className="col-md-12" style={{ paddingTop: "15px" }}>
           <Link
-            to="/model01"
+            to="/overview"
             className="col-md-12 btn-block"
             routerLinkActive="activebutton"
           >

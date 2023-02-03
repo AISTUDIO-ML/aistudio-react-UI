@@ -30,6 +30,9 @@
 .form-group {
 	margin-bottom: 1.2rem
 }
+.roww {
+    display:contents;
+}
 .custom-control-label::before {
 	background: transparent;
 	border: 2px solid #8676FF;
@@ -2085,6 +2088,13 @@ p.note {
 .btnspcr {
 	margin-bottom: 20px
 }
+.para_text {
+    display: flex;
+    align-items: baseline;
+}
+.count_no {
+    font-size: 12px;
+}
 
 /*-------------------
     Media Query
@@ -2166,7 +2176,7 @@ p.note {
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 	.login h1, .create h1 { font-size: 44px; }
-	.card h3 { font-size: 17px; line-height: 28px; }
+	.card h3 { font-size: 16px; line-height: 28px; }
 	.btn-outline, .btn-learn { margin: 10px 0px 0px; width: 100%; }
 	.form-control.search { max-width: 270px; margin-right: 10px; }
 	.btn-project { font-size: 14px; max-width: 118px; }
