@@ -1,9 +1,6 @@
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-// import "../node_modules/bootstrap/dist/js/bootstrap.min.js"; 
-// import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
-// import "../node_modules/bootstrap/dist/js/bootstrap.js"; 
-import "bootstrap/dist/js/bootstrap";
-import $ from "jquery";
+import "../node_modules/jquery/dist/jquery.slim.min.js";
+import "../node_modules/bootstrap/dist/js/bootstrap.min.js"; 
 import "./components/style.css";
 import Login from "./components/login/Login";
 import Header from "./components/header/Header";
@@ -33,12 +30,15 @@ import Experiment03 from "./components/experiments/Experiment03";
 import Model01 from "./components/model/Model01";
 import Model02 from "./components/model/Model02";
 import Model03 from "./components/model/Model03";
-
 import ProjectDetails from "./components/project-details/ProjectDetails";
 import MainLearnMore from "./components/data_connection/main-learn-more.component";
 
 
 function App() {
+
+
+
+
   return (
     <>
     
@@ -76,7 +76,6 @@ function App() {
           <Route path="/experiment01" element={<Experiment01 />} />
           <Route path="/experiment02" element={<Experiment02 />} />
           <Route path="/experiment03" element={<Experiment03 />} />
-
           <Route path="/model01" element={<Model01 />} />
           <Route path="/model02" element={<Model02 />} />
           <Route path="/model03" element={<Model03 />} />
