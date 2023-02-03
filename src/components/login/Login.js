@@ -5,48 +5,48 @@ import { Link  } from "react-router-dom";
 function Login() {
   return (
     <>
-    <section class="main">
-      <div class="row">
-          <div class="col">
-              <div class="login" >
+    <section className="main">
+      <div className="row">
+          <div className="col">
+              <div className="login" >
                   <h1> Log in to<br/> your account</h1>
                   <form>
-                      <div class="form-group">
+                      <div className="form-group">
                           <label>Email</label>
-                          <input type="text" class="form-control" placeholder="Type Here"/>
+                          <input type="text" className="form-control" placeholder="Type Here"/>
                       </div>
-                      <div class="form-group">
+                      <div className="form-group">
                           <label>Password</label>
-                          <input type="password" class="form-control" placeholder="Type Here"/>
+                          <input type="password" className="form-control" placeholder="Type Here"/>
                       </div>
-                      <div class="row remember">
-                          <div class="col">
-                              <div class="custom-control custom-checkbox">
-                                  <input type="checkbox" class="custom-control-input" id="customCheck1"/>
-                                  <label class="custom-control-label" for="customCheck1">Remember me</label>
+                      <div className="row remember">
+                          <div className="col">
+                              <div className="custom-control custom-checkbox">
+                                  <input type="checkbox" className="custom-control-input" id="customCheck1"/>
+                                  <label className="custom-control-label" for="customCheck1">Remember me</label>
                               </div>
                           </div>
-                          <div class="col">
-                              <a href="#" class="forgot">Forgot password?</a>
+                          <div className="col">
+                              <a href="#" className="forgot">Forgot password?</a>
                           </div>
                       </div>
-                      <button type="submit" class="btn btn-primary tpspc">Log In</button>
+                      <button type="submit" className="btn btn-primary tpspc">Log In</button>
                   </form>
               </div>
           </div>
 
           
-          <div class="col">
-              <div class="splash">
+          <div className="col">
+              <div className="splash">
                   <img src={login} alt=""/>
               </div>
           </div>
       </div>
 
-      <div class="row">
-          <div class="col-md-12" style={{paddingTop: "15px"}}>
-          <Link to="/signup" class="col-md-12 btn-block" routerLinkActive="activebutton">
-                  <button class="btn btn-primary mx-auto" style={{width:'100%', maxWidth:'1280px'}}>Next Page of Product
+      <div className="row">
+          <div className="col-md-12" style={{paddingTop: "15px"}}>
+          <Link to="/signup" className="col-md-12 btn-block" routerLinkActive="activebutton">
+                  <button className="btn btn-primary mx-auto" style={{width:'100%', maxWidth:'1280px'}}>Next Page of Product
                       Demo</button>
                       </Link>
           </div>

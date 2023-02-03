@@ -28,6 +28,15 @@ import OverView02 from "./components/overview/overview02";
 import Statistics from "./components/statistics/statistics";
 import StatisticsExpand from "./components/statistics/statistics_expand";
 import ProjectUpdates from "./components/project-updates/updates";
+import Experiment01 from "./components/experiments/Experiment01";
+import Experiment02 from "./components/experiments/Experiment02";
+import Experiment03 from "./components/experiments/Experiment03";
+import Model01 from "./components/model/Model01";
+import Model02 from "./components/model/Model02";
+import Model03 from "./components/model/Model03";
+
+import ProjectDetails from "./components/project-details/ProjectDetails";
+
 
 function App() {
   return (
@@ -57,6 +66,20 @@ function App() {
           <Route path="/statistics" element={<Statistics/>} />
           <Route path="/statistics_expand" element={<StatisticsExpand/>} />
           <Route path="/projects_update" element={<ProjectUpdates/>} />
+
+          <Route path="/experiment01" element={<Experiment01 />} />
+          <Route path="/experiment02" element={<Experiment02 />} />
+          <Route path="/experiment03" element={<Experiment03 />} />
+
+          <Route path="/model01" element={<Model01 />} />
+          <Route path="/model02" element={<Model02 />} />
+          <Route path="/model03" element={<Model03 />} />
+
+
+          <Route path="/projectdetails" element={<ProjectDetails />} />
+
+
+
         </Routes>
       </BrowserRouter>
       </div>
