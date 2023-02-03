@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import arw_dwn from "../assets/images/arw_dwn.png";
 import icn_pls from "../assets/images/icn_pls.png";
-import { Link  } from "react-router-dom";
 
 function Main() {
   return (

@@ -2,6 +2,7 @@ import React from 'react'
 import logo from "../assets/images/logo.png";
 import bell from "../assets/images/bell.png";
 import user from "../assets/images/user.png";
+import { Link  } from "react-router-dom";
 
 
 function MainHeader() {
@@ -11,7 +12,7 @@ function MainHeader() {
     <div className="container">    
       <div className="row">
         <div className="col col-md-6">
-          <a className="navbar-brand" href="#"><img src={logo} align="AISTUDIO"/></a>
+          <Link className="navbar-brand" to="/"><img src={logo} align="AISTUDIO"/></Link>
           <h1>Create New Project</h1>
         </div>
         <div className="col col-md-6">
