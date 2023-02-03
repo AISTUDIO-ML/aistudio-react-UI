@@ -57,4 +57,4 @@ function Hosting() {
   )
 }
 
-export default Hosting
+export default Hosting;

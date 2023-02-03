@@ -112,10 +112,10 @@ function SelectDataStore() {
      
             <div className="row">
             <div className="col-md-12" style={{paddingTop:"15px"}}>
-                <a routerLink="/selectDataUrl" className="col-md-12 btn-block" routerLinkActive="activebutton">
+            <Link to="/selectDataUrl" className="col-md-12 btn-block" routerLinkActive="activebutton">
                     <button className="btn btn-primary mx-auto" style={{width:"100%",maxWidth:"1280px"}}>Next Page of Product
                         Demo</button>
-                </a>
+                </Link>
             </div>
         </div>
   
