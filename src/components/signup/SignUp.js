@@ -1,12 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import login from "../assets/images/splash.png";
 import { Link } from "react-router-dom";
 import Header from "../header/Header";
 import { useFormik } from "formik";
 import { SignUpFormSchema } from "./SignUpFormSchema";
+import $ from 'jquery';
 
 
 function SignUp() {
+
+// Removing white space through jquery
+useEffect(() => {
+  $("input#space").on({
+    keydown: function(e) {
+      if (e.which === 32)
+        return false;
+    },
+    change: function() {
+      this.value = this.value.replace(/\s/g, "");
+    }
+  });
+
+
+}, [])
+
   // using formik
   const formInitialValues = {
     name: "",
@@ -47,6 +64,7 @@ function SignUp() {
                     value={values.name}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                      id="space"
                   />
                   {errors.name && touched.name ? (  <span className="err_msg"> {errors.name} </span>) : null }
                   
@@ -61,6 +79,7 @@ function SignUp() {
                     value={values.email}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                      id="space"
                   />
                   {errors.email && touched.email ? (  <span className="err_msg"> {errors.email} </span>) : null }
                 </div>
@@ -74,6 +93,7 @@ function SignUp() {
                     value={values.phone}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                      id="space"
                   />
                   {errors.phone && touched.phone ? (  <span className="err_msg"> {errors.phone} </span>) : null }
                 </div>
@@ -87,6 +107,7 @@ function SignUp() {
                     value={values.password}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                      id="space"
                   />
                   {errors.password && touched.password ? (  <span className="err_msg"> {errors.password} </span>) : null }
                 </div>
@@ -100,6 +121,7 @@ function SignUp() {
                     value={values.conpassword}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                      id="space"
                   />
                   {errors.conpassword && touched.conpassword ? (  <span className="err_msg"> {errors.conpassword} </span>) : null }
                 </div>

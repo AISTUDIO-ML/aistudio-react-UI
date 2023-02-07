@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import login from "../assets/images/splash.png";
 import { Link } from "react-router-dom";
 import Header from "../header/Header";
 import { useFormik } from "formik";
 import { LoginFormSchema } from "./LoginFormSchema";
+import $ from 'jquery';
 
 function Login() {
+
+// Removing white space through jquery
+  useEffect(() => {
+    $("input#space").on({
+      keydown: function(e) {
+        if (e.which === 32)
+          return false;
+      },
+      change: function() {
+        this.value = this.value.replace(/\s/g, "");
+      }
+    });
+  
+ 
+  }, [])
+  
   // using formik
   const formInitialValues = {
     email: "",
@@ -47,6 +64,7 @@ function Login() {
                     value={values.email}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                    id="space"
                   />
                 {errors.email && touched.email ? (  <span className="err_msg"> {errors.email} </span>) : null }
                 </div>
@@ -60,6 +78,7 @@ function Login() {
                     value={values.password}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                    id="space"
                   />
 
                   {errors.password && touched.password ? (  <span className="err_msg"> {errors.password} </span>) : null }

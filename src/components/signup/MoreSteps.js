@@ -1,12 +1,28 @@
-import React from 'react'
+import React, { useEffect } from "react";
 import login from "../assets/images/splash.png";
 import { Link  } from "react-router-dom";
 import Header from '../header/Header';
 import { useFormik } from "formik";
 import { MoreStepSchema } from "./MoreStepSchema";
+import $ from 'jquery';
 
 
 function MoreSteps() {
+// Removing white space through jquery
+useEffect(() => {
+    $("input#space").on({
+      keydown: function(e) {
+        if (e.which === 32)
+          return false;
+      },
+      change: function() {
+        this.value = this.value.replace(/\s/g, "");
+      }
+    });
+  
+  
+  }, [])
+
 
  // using formik
  const formInitialValues = {
@@ -41,7 +57,9 @@ function MoreSteps() {
                         name="companyname"
                         value={values.companyname}
                         onChange={handleChange}
-                        onBlur={handleBlur}/>
+                        onBlur={handleBlur}
+                        id="space"
+                        />
                         {errors.companyname && touched.companyname ? (  <span className="err_msg"> {errors.companyname} </span>) : null }
                     </div>
                     <div className="form-group">
@@ -51,6 +69,7 @@ function MoreSteps() {
                         value={values.address}
                         onChange={handleChange}
                         onBlur={handleBlur}
+                        id="space"
                         />
                         {errors.address && touched.address ? (  <span className="err_msg"> {errors.address} </span>) : null }
                     </div>
@@ -61,6 +80,7 @@ function MoreSteps() {
                         value={values.billing}
                         onChange={handleChange}
                         onBlur={handleBlur}
+                        id="space"
                         />
                         {errors.billing && touched.billing ? (  <span className="err_msg"> {errors.billing} </span>) : null }
                     </div>

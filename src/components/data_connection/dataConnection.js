@@ -72,45 +72,9 @@ function DataConnection() {
               </div>
               </div>
             </div>
-            <div className="form-group group">
-              <div className="row">
-                <div className="roww">
-                <div className="col">
-                  <input type="text" className="form-control" placeholder="AWS Athena 2.0 (2.0.5)"/>
-                </div>
-                <div className="col">
-                  <input type="text" className="form-control" placeholder="AWS Athena 2.0 (2.0.5)"/>
-                </div>
-                <a href="#" className="delete"><img src={icnTrash} alt=""/></a>
-              </div>
-              </div>
-            </div>
-            <div className="form-group group">
-              <div className="row">
-                <div className="roww">
-                <div className="col">
-                  <input type="text" className="form-control" placeholder="AWS Athena 2.0 (2.0.5)"/>
-                </div>
-                <div className="col">
-                  <input type="text" className="form-control" placeholder="AWS Athena 2.0 (2.0.5)"/>
-                </div>
-                <a href="#" className="delete"><img src={icnTrash} alt=""/></a>
-              </div>
-              </div>
-            </div>
-            <div className="form-group group">
-              <div className="row">
-                <div className="roww">
-                <div className="col">
-                  <input type="text" className="form-control" placeholder="AWS Athena 2.0 (2.0.5)"/>
-                </div>
-                <div className="col">
-                  <input type="text" className="form-control" placeholder="AWS Athena 2.0 (2.0.5)"/>
-                </div>
-                <a href="#" className="delete"><img src={icnTrash} alt=""/></a>
-              </div>
-              </div>
-            </div>
+       
+           
+    
            
             <div className="form-group">
               <a href="#" className="add">+ <u>Add parameter</u></a>

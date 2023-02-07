@@ -17,10 +17,26 @@ p, li { color: #383874; font-family: 'Poppins', sans-serif; font-size: 16px; fon
 
 /*  Login Page Error Message*/
 
-.err_msg
+.err_msg,.card_validation
 {
     color: red;
     font-size: 13px;
     padding-left: 4px;
       
+}
+/* Payment Details Credit Card Img */
+.credit_card_div
+{
+
+    display: flex;
+
+  align-items: center;
+  position: relative;
+  
+}
+
+.card_img
+{
+  position: absolute;
+  right: 10px;
 }
