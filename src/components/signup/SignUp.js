@@ -5,7 +5,7 @@ import Header from "../header/Header";
 import { useFormik } from "formik";
 import { SignUpFormSchema } from "./SignUpFormSchema";
 import $ from 'jquery';
-
+import {createUser} from '../service'
 
 function SignUp() {
 
@@ -38,7 +38,8 @@ useEffect(() => {
       validationSchema: SignUpFormSchema,
 
       onSubmit: (values) => {
-        console.log(values);
+        console.log("ALL DATA "+JSON.stringify(values));
+        createUser(values);
       },
     });
 

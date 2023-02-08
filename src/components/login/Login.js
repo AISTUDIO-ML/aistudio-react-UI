@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import login from "../assets/images/splash.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../header/Header";
 import { useFormik } from "formik";
 import { LoginFormSchema } from "./LoginFormSchema";
 import $ from 'jquery';
+import {logIn} from '../service';
+import axios from 'axios';
 
 function Login() {
 
@@ -35,11 +37,13 @@ function Login() {
    
    // If we hit the Login Button, the value provided by user will be stored in "values"
     onSubmit:(values)=>{
-        console.log(values);
-            
+     
+      logIn(values)
     }
   });
 
+
+  
   return (
     <>
       <Header />
@@ -139,5 +143,4 @@ function Login() {
     </>
   );
 }
-
 export default Login;
