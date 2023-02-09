@@ -5,11 +5,11 @@ import Header from "../header/Header";
 import { useFormik } from "formik";
 import { LoginFormSchema } from "./LoginFormSchema";
 import $ from 'jquery';
-import {logIn} from '../service';
+import {LogIn} from '../service';
 import axios from 'axios';
 
 function Login() {
-
+const navigate = useNavigate();
 // Removing white space through jquery
   useEffect(() => {
     $("input#space").on({
@@ -37,8 +37,13 @@ function Login() {
    
    // If we hit the Login Button, the value provided by user will be stored in "values"
     onSubmit:(values)=>{
-     
-      logIn(values)
+      LogIn(values).then(response => {
+        localStorage.setItem("jwt",response.data.jwt) 
+         navigate('/main');
+        })
+      .catch(error => {
+        console.log('An error occurred:',error.response);
+      });
     }
   });
 
@@ -123,7 +128,7 @@ function Login() {
           </div>
         </div>
 
-        <div className="row">
+        {/* <div className="row">
           <div className="col-md-12" style={{ paddingTop: "15px" }}>
             <Link
               to="/signup"
@@ -138,7 +143,7 @@ function Login() {
               </button>
             </Link>
           </div>
-        </div>
+        </div> */}
       </section>
     </>
   );

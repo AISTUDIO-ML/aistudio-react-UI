@@ -1,27 +1,29 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import card from "../assets/images/card.png";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import Header from "../header/Header";
 import { useFormik } from "formik";
 import { PaymentDetailsSchema } from "./PaymentDetailsSchema";
 import { useCreditCardValidator, images } from "react-creditcard-validator";
-
 import $ from "jquery";
+import { UpdateUserpay } from "../service";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function PaymentDetails() {
-
+  const navigate = useNavigate();
+  
 // 
+const[cvc,setCvc]=useState();
+const[cardNum,setCardNum]=useState();
+const[expiry,setExpiry]=useState();
+const[namee,setName]=useState();
 
 var card_number = document.getElementById('card_number');
 
-
-
-
-
-console.log(card_number)
-
   // Removing white space through jquery
-
+let data = 
   useEffect(() => {
     // $("input#space").on({
     //   keydown: function (e) {
@@ -40,13 +42,20 @@ console.log(card_number)
   }, []);
 
   const {
-    getCardNumberProps,
-    getExpiryDateProps,
-    getCVCProps,
-    getCardImageProps,
-    meta: { erroredInputs },
+    getCardNumberProps, getExpiryDateProps, 
+    getCVCProps,getCardImageProps, meta: { erroredInputs },
+    
   } = useCreditCardValidator();
 
+const handleChangeCardNumber=(e)=>{
+setCardNum(e.target.value)
+}
+const handleChangeExpiry=(e)=>{
+  setExpiry(e.target.value)
+  }
+const handleChangeCvc=(e)=>{
+    setCvc(e.target.value)
+    }
   // using formik
   const formInitialValues = {
     cardholder: "",
@@ -55,19 +64,41 @@ console.log(card_number)
     cvc: "",
   };
   // using formik
-  const { handleSubmit, handleChange, handleBlur, touched, values, errors } =
+  const { handleChange, handleBlur, touched, values, errors } =
     useFormik({
       initialValues: formInitialValues,
       validationSchema: PaymentDetailsSchema,
 
       onSubmit: (values) => {
         console.log(values);
+        // console.log(namee);
+        // console.log(cardNum);
+        // console.log(cvc);
+        // console.log(expiry);
       },
     });
+const handleSubmit = (e) =>{
+  e.preventDefault();
+  UpdateUserpay(values.cardholder,cardNum,cvc,expiry).then(response => {
+    toast.success("Account Created !!", {
+      position:toast.POSITION.TOP_CENTER,
+      autoClose:1500 
+      
+    });
+    navigate('/main')
+    // 
+   
+ 
+  })
+    .catch(error =>{
+      console.log('An error occurred:',error.response.data);
+    });
 
+}
   return (
     <>
       <Header />
+      <ToastContainer autoClose={7000}/>
       <section className="main">
         <div className="row">
           <div className="col">
@@ -102,12 +133,10 @@ console.log(card_number)
                   <div className="credit_card_div">
                     <input
                       type="number"
-                     
                       className="form-control"
                       placeholder="Type Here"
                       id="card_number"
-                    
-                      {...getCardNumberProps()}
+                      {...getCardNumberProps({onChange: handleChangeCardNumber })}
                     />
                     <svg className="card_img"{...getCardImageProps({ images })} />
                   </div>
@@ -124,10 +153,7 @@ console.log(card_number)
                       type="text"
                       className="form-control"
                       placeholder="MM/DD/YY"
-                    
-                     
-                      
-                      {...getExpiryDateProps()}
+                      {...getExpiryDateProps({onChange: handleChangeExpiry })}
                     />
 
                     <small className="card_validation">{erroredInputs.expiryDate && erroredInputs.expiryDate}</small>
@@ -142,9 +168,7 @@ console.log(card_number)
                       type="text"
                       className="form-control"
                       placeholder="Ex. 1234"
-                     
-                  
-                      {...getCVCProps()}
+                       {...getCVCProps({onChange: handleChangeCvc })}
                     />
                     <small className="card_validation">{erroredInputs.cvc && erroredInputs.cvc}</small>
                   
@@ -178,7 +202,7 @@ console.log(card_number)
           </div>
         </div>
 
-        <div className="row">
+        {/* <div className="row">
           <div className="col-md-12" style={{ paddingTop: "15px" }}>
             <Link
               to="/hosting"
@@ -193,7 +217,7 @@ console.log(card_number)
               </button>
             </Link>
           </div>
-        </div>
+        </div> */}
       </section>
     </>
   );

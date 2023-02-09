@@ -1,28 +1,32 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import login from "../assets/images/splash.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../header/Header";
 import { useFormik } from "formik";
 import { SignUpFormSchema } from "./SignUpFormSchema";
 import $ from 'jquery';
-import {createUser} from '../service'
+import { CreateUser } from '../service'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function SignUp() {
+  const [error,setError]=useState('');
+  const [toastt,setToast]=useState(false);
+  const navigate = useNavigate();
+  // Removing white space through jquery
+  useEffect(() => {
+    $("input#space").on({
+      keydown: function (e) {
+        if (e.which === 32)
+          return false;
+      },
+      change: function () {
+        this.value = this.value.replace(/\s/g, "");
+      }
+    });
 
-// Removing white space through jquery
-useEffect(() => {
-  $("input#space").on({
-    keydown: function(e) {
-      if (e.which === 32)
-        return false;
-    },
-    change: function() {
-      this.value = this.value.replace(/\s/g, "");
-    }
-  });
 
-
-}, [])
+  }, [])
 
   // using formik
   const formInitialValues = {
@@ -34,18 +38,31 @@ useEffect(() => {
   };
   // using formik
   const { handleSubmit, handleChange, handleBlur, touched, values, errors } = useFormik({
-      initialValues: formInitialValues,
-      validationSchema: SignUpFormSchema,
+    initialValues: formInitialValues,
+    validationSchema: SignUpFormSchema,
 
-      onSubmit: (values) => {
-        console.log("ALL DATA "+JSON.stringify(values));
-        createUser(values);
-      },
-    });
+    onSubmit: (values) => {
+      CreateUser(values).then(response => {
+        console.log(response.data.user.id)
+        localStorage.setItem("user_id", response.data.user.id)
+        //   toast.success("Account Created !!", {
+        //   position:toast.POSITION.TOP_CENTER,
+        //   autoClose:7000 
+        // });
+        localStorage.setItem("jwt", response.data.jwt)
+        navigate('/moreSteps');
+      })
+        .catch(error =>{
+          console.log('An error occurred:',error.response.data.error.message);
+          setError(error.response.data.error.message)
+        });
 
+    },
+  });
   return (
     <>
       <Header />
+      <ToastContainer autoClose={1500}/>
       <section className="main">
         <div className="row">
           <div className="col">
@@ -65,10 +82,10 @@ useEffect(() => {
                     value={values.name}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                      id="space"
+                    id="space"
                   />
-                  {errors.name && touched.name ? (  <span className="err_msg"> {errors.name} </span>) : null }
-                  
+                  {errors.name && touched.name ? (<span className="err_msg"> {errors.name} </span>) : null}
+
                 </div>
                 <div className="form-group">
                   <label>Email</label>
@@ -80,9 +97,10 @@ useEffect(() => {
                     value={values.email}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                      id="space"
+                    id="space"
                   />
-                  {errors.email && touched.email ? (  <span className="err_msg"> {errors.email} </span>) : null }
+                
+                  {errors.email && touched.email ? (<span className="err_msg"> {errors.email} </span>) : null}
                 </div>
                 <div className="form-group">
                   <label>Phone number</label>
@@ -94,9 +112,9 @@ useEffect(() => {
                     value={values.phone}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                      id="space"
+                    id="space"
                   />
-                  {errors.phone && touched.phone ? (  <span className="err_msg"> {errors.phone} </span>) : null }
+                  {errors.phone && touched.phone ? (<span className="err_msg"> {errors.phone} </span>) : null}
                 </div>
                 <div className="form-group">
                   <label>Password</label>
@@ -108,9 +126,9 @@ useEffect(() => {
                     value={values.password}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                      id="space"
+                    id="space"
                   />
-                  {errors.password && touched.password ? (  <span className="err_msg"> {errors.password} </span>) : null }
+                  {errors.password && touched.password ? (<span className="err_msg"> {errors.password} </span>) : null}
                 </div>
                 <div className="form-group">
                   <label>Confirm password</label>
@@ -122,9 +140,9 @@ useEffect(() => {
                     value={values.conpassword}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                      id="space"
+                    id="space"
                   />
-                  {errors.conpassword && touched.conpassword ? (  <span className="err_msg"> {errors.conpassword} </span>) : null }
+                  {errors.conpassword && touched.conpassword ? (<span className="err_msg"> {errors.conpassword} </span>) : null}
                 </div>
                 <div className="row remember">
                   <div className="col">
@@ -163,7 +181,7 @@ useEffect(() => {
             </div>
           </div>
         </div>
-        <div className="row">
+        {/* <div className="row">
           <div className="col-md-12" style={{ paddingTop: "15px" }}>
             <Link to="/moreSteps" className="col-md-12 btn-block">
               <button
@@ -174,7 +192,7 @@ useEffect(() => {
               </button>
             </Link>
           </div>
-        </div>
+        </div> */}
       </section>
     </>
   );
