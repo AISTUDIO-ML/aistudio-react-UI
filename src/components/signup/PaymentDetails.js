@@ -7,53 +7,47 @@ import { PaymentDetailsSchema } from "./PaymentDetailsSchema";
 import { useCreditCardValidator, images } from "react-creditcard-validator";
 import $ from "jquery";
 import { UpdateUserpay } from "../service";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import moment from 'moment';
+import toast from 'react-hot-toast';
+
 
 function PaymentDetails() {
   const navigate = useNavigate();
 
-  //
+  // 
   const [cvc, setCvc] = useState();
   const [cardNum, setCardNum] = useState();
   const [expiry, setExpiry] = useState();
-  const [namee, setName] = useState();
+
+  var card_number = document.getElementById('card_number');
 
   // Removing white space through jquery
-  let data = useEffect(() => {
-    // $("input#space").on({
-    //   keydown: function (e) {
-    //     if (e.which === 32) return false;
-    //   },
-    //   change: function () {
-    //     this.value = this.value.replace(/\s/g, "");
-    //   },
-    // });
-    $("#space").on("keydown", function (e) {
-      console.log(this.value);
-      if (e.which === 32 && this.value === "") {
-        return false;
-      }
-    });
-  }, []);
+  let data =
+    useEffect(() => {
+
+      $('#space').on('keydown', function (e) {
+        console.log(this.value);
+        if (e.which === 32 && this.value === '') {
+          return false;
+        }
+      });
+    }, []);
 
   const {
-    getCardNumberProps,
-    getExpiryDateProps,
-    getCVCProps,
-    getCardImageProps,
-    meta: { erroredInputs },
+    getCardNumberProps, getExpiryDateProps,
+    getCVCProps, getCardImageProps, meta: { erroredInputs },
+
   } = useCreditCardValidator();
 
   const handleChangeCardNumber = (e) => {
-    setCardNum(e.target.value);
-  };
+    setCardNum(e.target.value)
+  }
   const handleChangeExpiry = (e) => {
-    setExpiry(e.target.value);
-  };
+    setExpiry(e.target.value)
+  }
   const handleChangeCvc = (e) => {
-    setCvc(e.target.value);
-  };
+    setCvc(e.target.value)
+  }
   // using formik
   const formInitialValues = {
     cardholder: "",
@@ -62,51 +56,36 @@ function PaymentDetails() {
     cvc: "",
   };
   // using formik
-  const { handleChange, handleBlur, touched, values, errors } = useFormik({
-    initialValues: formInitialValues,
-    validationSchema: PaymentDetailsSchema,
 
-    onSubmit: (values) => {
-      console.log(values);
-      // console.log(namee);
-      // console.log(cardNum);
-      // console.log(cvc);
-      // console.log(expiry);
-    },
-  });
+  const { handleChange, handleBlur, touched, values, errors } =
+    useFormik({
+      initialValues: formInitialValues,
+      validationSchema: PaymentDetailsSchema,
 
+      onSubmit: (values) => {
+        console.log(values);
+      },
+    });
   const handleSubmit = (e) => {
     e.preventDefault();
-    UpdateUserpay(values.cardholder, cardNum, cvc, expiry)
-      .then((response) => {
-        toast.success("Account Created !!", {
-          position: toast.POSITION.TOP_CENTER,
-          autoClose: 1500,
-        });
-        navigate("/main");
-        //
-      })
-      .catch((error) => {
-        console.log("An error occurred:", error.response.data);
-      });
-
-    // If submit without entreing the details
-
-    {
-      /*
-    var space = document.getElementById('space');
-    var c_number = document.getElementById('c_number');
-    var expiry_date = document.getElementById('expiry_date');
-     var cvc = document.getElementById('cvc');
-*/
+    let datee = moment(expiry, 'MM/YY').format()
+    if (erroredInputs.cardNumber != 'Card number is invalid') {
+      if (values.cardholder && cardNum && cvc && datee) {
+        UpdateUserpay(values.cardholder, cardNum, cvc, datee).then(response => {
+          toast.success('Account Created !!', {
+            duration: 2000,
+            position: 'top-center'})
+          navigate('/main')
+        })
+          .catch(error => {
+            console.log('An error occurred:', error.response.data);
+          });
+      }
     }
-
-    
-  };
+  }
   return (
     <>
       <Header />
-      <ToastContainer autoClose={7000} />
       <section className="main">
         <div className="row">
           <div className="col">
@@ -123,7 +102,6 @@ function PaymentDetails() {
                     className="form-control"
                     placeholder="Type Here"
                     name="cardholder"
-                    style={{ textTransform: "capitalize" }}
                     value={values.cardholder}
                     onChange={handleChange}
                     onBlur={handleBlur}
@@ -143,19 +121,13 @@ function PaymentDetails() {
                       type="number"
                       className="form-control"
                       placeholder="Type Here"
-                      id="c_number"
-                      {...getCardNumberProps({
-                        onChange: handleChangeCardNumber,
-                      })}
-                    />
-                    <svg
-                      className="card_img"
-                      {...getCardImageProps({ images })}
+                      id="card_number"
+                      {...getCardNumberProps({ onChange: handleChangeCardNumber })}
                     />
                   </div>
-                  <small className="card_validation">
-                    {erroredInputs.cardNumber && erroredInputs.cardNumber}
-                  </small>
+                  <small className="card_validation" >{erroredInputs.cardNumber && erroredInputs.cardNumber}</small>
+
+
                 </div>
 
                 {/*  Expiry Date */}
@@ -166,14 +138,13 @@ function PaymentDetails() {
                       type="text"
                       className="form-control"
                       placeholder="MM/DD/YY"
-                      id="expiry_date"
                       {...getExpiryDateProps({ onChange: handleChangeExpiry })}
                     />
 
-                    <small className="card_validation">
-                      {erroredInputs.expiryDate && erroredInputs.expiryDate}
-                    </small>
+                    <small className="card_validation">{erroredInputs.expiryDate && erroredInputs.expiryDate}</small>
+
                   </div>
+
 
                   {/*  CVC */}
                   <div className="col-md-6 mb-3">
@@ -182,12 +153,10 @@ function PaymentDetails() {
                       type="text"
                       className="form-control"
                       placeholder="Ex. 1234"
-                      id="cvc"
                       {...getCVCProps({ onChange: handleChangeCvc })}
                     />
-                    <small className="card_validation">
-                      {erroredInputs.cvc && erroredInputs.cvc}
-                    </small>
+                    <small className="card_validation">{erroredInputs.cvc && erroredInputs.cvc}</small>
+
                   </div>
                 </div>
                 <div className="explore">

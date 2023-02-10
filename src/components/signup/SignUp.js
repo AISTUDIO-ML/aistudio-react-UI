@@ -43,12 +43,8 @@ function SignUp() {
 
     onSubmit: (values) => {
       CreateUser(values).then(response => {
-        console.log(response.data.user.id)
         localStorage.setItem("user_id", response.data.user.id)
-        //   toast.success("Account Created !!", {
-        //   position:toast.POSITION.TOP_CENTER,
-        //   autoClose:7000 
-        // });
+        localStorage.setItem("user_mail", response.data.user.email)
         localStorage.setItem("jwt", response.data.jwt)
         navigate('/moreSteps');
       })
@@ -62,7 +58,7 @@ function SignUp() {
   return (
     <>
       <Header />
-      <ToastContainer autoClose={1500}/>
+    
       <section className="main">
         <div className="row">
           <div className="col">

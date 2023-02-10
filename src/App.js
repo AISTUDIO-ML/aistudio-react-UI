@@ -35,10 +35,6 @@ import MainLearnMore from "./components/data_connection/main-learn-more.componen
 
 
 function App() {
-
-
-
-
   return (
     <>
     

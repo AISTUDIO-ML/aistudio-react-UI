@@ -21,13 +21,14 @@ export const UpdateUserbill = (values) => {
 }
 export const UpdateUserpay = (cardholder,cardNum,cvc,expiry) => {
   let userId = localStorage.getItem('user_id')
+  console.log("service date -"+expiry)
   return axios
     .put(`${process.env.REACT_APP_API_URL}/users/${userId}`, {
       id:userId,
       card_holder_name:cardholder,
       card_number:cardNum,
       cvc: cvc,
-      expiry:expiry
+      expiry_date:expiry
     })
 }
 
