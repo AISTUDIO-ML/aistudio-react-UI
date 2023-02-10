@@ -12,6 +12,7 @@ import toast from 'react-hot-toast';
 
 
 function PaymentDetails() {
+  
   const navigate = useNavigate();
 
   // 
@@ -19,7 +20,7 @@ function PaymentDetails() {
   const [cardNum, setCardNum] = useState();
   const [expiry, setExpiry] = useState();
 
-  var card_number = document.getElementById('card_number');
+  
 
   // Removing white space through jquery
   let data =
@@ -121,9 +122,11 @@ function PaymentDetails() {
                       type="number"
                       className="form-control"
                       placeholder="Type Here"
-                      id="card_number"
-                      {...getCardNumberProps({ onChange: handleChangeCardNumber })}
+                      
+                      {...getCardNumberProps({ onChange: handleChangeCardNumber,id: "card_number" })}
+                      
                     />
+                    <svg className="card_img"{...getCardImageProps({ images })} />
                   </div>
                   <small className="card_validation" >{erroredInputs.cardNumber && erroredInputs.cardNumber}</small>
 
@@ -138,7 +141,7 @@ function PaymentDetails() {
                       type="text"
                       className="form-control"
                       placeholder="MM/DD/YY"
-                      {...getExpiryDateProps({ onChange: handleChangeExpiry })}
+                      {...getExpiryDateProps({ onChange: handleChangeExpiry,id: "exp_number" })}
                     />
 
                     <small className="card_validation">{erroredInputs.expiryDate && erroredInputs.expiryDate}</small>
@@ -153,7 +156,7 @@ function PaymentDetails() {
                       type="text"
                       className="form-control"
                       placeholder="Ex. 1234"
-                      {...getCVCProps({ onChange: handleChangeCvc })}
+                      {...getCVCProps({ onChange: handleChangeCvc,id:"cv_number" })}
                     />
                     <small className="card_validation">{erroredInputs.cvc && erroredInputs.cvc}</small>
 

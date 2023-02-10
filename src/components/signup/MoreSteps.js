@@ -1,13 +1,15 @@
 import React, { useEffect } from "react";
 import login from "../assets/images/splash.png";
-import { Link  } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 import Header from '../header/Header';
 import { useFormik } from "formik";
 import { MoreStepSchema } from "./MoreStepSchema";
 import $ from 'jquery';
+import { UpdateUserbill } from "../service";
 
 
 function MoreSteps() {
+    const navigate =useNavigate();
 // Removing white space through jquery
 // Below code will remove the white space from middle of words too
 // useEffect(() => {
@@ -48,7 +50,19 @@ useEffect(() => {
    
    // If we hit the Login Button, the value provided by user will be stored in "values"
     onSubmit:(values)=>{
+        UpdateUserbill(values).then(response => {
+            if(response){
+                navigate('/paymentDetails');
+            }
+          
+          })
+            .catch(error =>{
+              console.log('An error occurred:',error.response.data.error.message);
+            });
         console.log(values);
+        localStorage.setItem("company_name",values.companyname)
+        localStorage.setItem("address",values.address)
+        localStorage.setItem("billing",values.billing)
             
     }
   });
