@@ -10,8 +10,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function SignUp() {
-  const [error,setError]=useState('');
-  const [toastt,setToast]=useState(false);
+  const [error, setError] = useState('');
   const navigate = useNavigate();
   // Removing white space through jquery
   useEffect(() => {
@@ -42,14 +41,15 @@ function SignUp() {
     validationSchema: SignUpFormSchema,
 
     onSubmit: (values) => {
+
       CreateUser(values).then(response => {
         localStorage.setItem("user_id", response.data.user.id)
         localStorage.setItem("user_mail", response.data.user.email)
         localStorage.setItem("jwt", response.data.jwt)
         navigate('/moreSteps');
       })
-        .catch(error =>{
-          console.log('An error occurred:',error.response.data.error.message);
+        .catch(error => {
+          console.log('An error occurred:', error.response.data.error.message);
           setError(error.response.data.error.message)
         });
 
@@ -58,7 +58,7 @@ function SignUp() {
   return (
     <>
       <Header />
-    
+
       <section className="main">
         <div className="row">
           <div className="col">
@@ -95,7 +95,7 @@ function SignUp() {
                     onBlur={handleBlur}
                     id="space"
                   />
-                
+
                   {errors.email && touched.email ? (<span className="err_msg"> {errors.email} </span>) : null}
                 </div>
                 <div className="form-group">

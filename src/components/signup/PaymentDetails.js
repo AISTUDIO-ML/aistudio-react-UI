@@ -12,15 +12,19 @@ import toast from 'react-hot-toast';
 
 
 function PaymentDetails() {
-  
-  const navigate = useNavigate();
 
-  // 
+  const navigate = useNavigate();
+  let conName = localStorage.getItem("company_name");
+  let address = localStorage.getItem("address");
+  let bill = localStorage.getItem("billing");
+  let userId = localStorage.getItem('user_id')
+
+  const [alldata, setAllData] = useState();
   const [cvc, setCvc] = useState();
   const [cardNum, setCardNum] = useState();
   const [expiry, setExpiry] = useState();
 
-  
+
 
   // Removing white space through jquery
   let data =
@@ -67,15 +71,28 @@ function PaymentDetails() {
         console.log(values);
       },
     });
+  let datee;
   const handleSubmit = (e) => {
     e.preventDefault();
-    let datee = moment(expiry, 'MM/YY').format()
+    datee = moment(expiry, 'MM/YY').format()
+    setAllData({
+      ...alldata,
+      id: userId,
+      company_name:conName,
+      address: address,
+      billing_address: bill,
+      card_holder_name: values.cardholder,
+      card_number:cardNum,
+      cvc: cvc,
+      expiry_date:datee,
+    })
     if (erroredInputs.cardNumber != 'Card number is invalid') {
       if (values.cardholder && cardNum && cvc && datee) {
-        UpdateUserpay(values.cardholder, cardNum, cvc, datee).then(response => {
+        UpdateUserpay(alldata).then(response => {
           toast.success('Account Created !!', {
             duration: 2000,
-            position: 'top-center'})
+            position: 'top-center'
+          })
           navigate('/main')
         })
           .catch(error => {
@@ -99,9 +116,25 @@ function PaymentDetails() {
     }
 
   }
+  const handle = () => {
+    setAllData({
+      ...alldata,
+      id: userId,
+      company_name: conName,
+      address: address,
+      billing_address: bill,
+      card_holder_name: values.cardholder,
+      card_number: cardNum,
+      cvc: cvc,
+      expiry_date: datee,
+    })
+  };
+  console.log("alldata - " + JSON.stringify(alldata));
   return (
     <>
       <Header />
+      <button onClick={handle} >click!!</button>
+
       <section className="main">
         <div className="row">
           <div className="col">
@@ -141,9 +174,9 @@ function PaymentDetails() {
                       type="number"
                       className="form-control"
                       placeholder="Type Here"
-                      
-                      {...getCardNumberProps({ onChange: handleChangeCardNumber,id: "card_number" })}
-                      
+
+                      {...getCardNumberProps({ onChange: handleChangeCardNumber, id: "card_number" })}
+
                     />
                     <svg className="card_img"{...getCardImageProps({ images })} />
                   </div>
@@ -160,7 +193,7 @@ function PaymentDetails() {
                       type="text"
                       className="form-control"
                       placeholder="MM/DD/YY"
-                      {...getExpiryDateProps({ onChange: handleChangeExpiry,id: "exp_number" })}
+                      {...getExpiryDateProps({ onChange: handleChangeExpiry, id: "exp_number" })}
                     />
 
                     <small className="card_validation">{erroredInputs.expiryDate && erroredInputs.expiryDate}</small>
@@ -175,7 +208,7 @@ function PaymentDetails() {
                       type="text"
                       className="form-control"
                       placeholder="Ex. 1234"
-                      {...getCVCProps({ onChange: handleChangeCvc,id:"cv_number" })}
+                      {...getCVCProps({ onChange: handleChangeCvc, id: "cv_number" })}
                     />
                     <small className="card_validation">{erroredInputs.cvc && erroredInputs.cvc}</small>
                     
@@ -209,7 +242,7 @@ function PaymentDetails() {
           </div>
         </div>
 
-    
+
       </section>
     </>
   );
