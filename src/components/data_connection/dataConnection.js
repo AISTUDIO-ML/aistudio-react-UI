@@ -191,7 +191,7 @@ function DataConnection() {
                 
                 {val.map((item, index) => {
                   return (
-                    <div className="form-group group">
+                    <div className="form-group group" key={index}>
                       <div className="row">
                         <div className="roww">
                           <div className="col">
