@@ -83,6 +83,21 @@ function PaymentDetails() {
           });
       }
     }
+
+    var a = document.getElementById('space').value;
+    var b =  document.getElementById('card_number').value;
+    var c =  document.getElementById('exp_number').value;
+    var d =  document.getElementById('cv_number').value;
+
+    if (a=='' | b=='' | c=='' | d=='') {
+     document.getElementById('err_1')
+    }
+
+    else
+    {
+      console.log("Thank you")
+    }
+
   }
   return (
     <>
@@ -96,6 +111,8 @@ function PaymentDetails() {
                 <br /> details
               </h1>
               <form onSubmit={handleSubmit}>
+
+              {/* Card Name */}
                 <div className="form-group">
                   <label>Card Holder Name</label>
                   <input
@@ -111,6 +128,8 @@ function PaymentDetails() {
                   {errors.cardholder && touched.cardholder ? (
                     <span className="err_msg"> {errors.cardholder} </span>
                   ) : null}
+
+                <span id="err_1">error</span>
                 </div>
 
                 {/*  Card Number */}
@@ -159,7 +178,7 @@ function PaymentDetails() {
                       {...getCVCProps({ onChange: handleChangeCvc,id:"cv_number" })}
                     />
                     <small className="card_validation">{erroredInputs.cvc && erroredInputs.cvc}</small>
-
+                    
                   </div>
                 </div>
                 <div className="explore">
