@@ -14,29 +14,37 @@ h1, h2, h3, h4, h5, h6 { color: #383874; font-family: 'Poppins', sans-serif; fon
 h1 { font-size: 48px; }
 p, li { color: #383874; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 300; overflow-wrap: break-word; word-wrap: break-word; } */
 
+/* Color Scheme Variables */
+
+:root {
+  --color-primary: #513fdc;
+  --color-secondary: #383874;
+  --color-pink: #ff708b;
+}
+
+.app__flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /*  Login Page Error Message*/
 
-.err_msg,.card_validation
-{
-    color: red;
-    font-size: 13px;
-    padding-left: 4px;
-      
+.err_msg,
+.card_validation {
+  color: red;
+  font-size: 13px;
+  padding-left: 4px;
 }
 /* Payment Details Credit Card Img */
-.credit_card_div
-{
-
-    display: flex;
+.credit_card_div {
+  display: flex;
 
   align-items: center;
   position: relative;
-  
 }
 
-.card_img
-{
+.card_img {
   position: absolute;
   right: 10px;
 }
