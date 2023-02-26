@@ -1,0 +1,64 @@
+.app__dashboard-container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  #toggleMenu-Btn {
+    font-weight: bold;
+    font-size: 1.4rem;
+    position: relative;
+    top: 32px;
+    left: 16px;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  .app__dashboard-menu-container {
+    background-color: #513fdc;
+    height: 93.7vh;
+    z-index: 100;
+    // position: absolute;
+    // left: 0;
+    max-width: 16rem;
+
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      top: 10px;
+    }
+
+    .app__dashboard-item-container {
+      padding: 0.5rem;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        flex-direction: row;
+        color: #e3e3e3;
+      }
+
+      svg {
+        padding: 16px;
+      }
+      p {
+        text-transform: uppercase;
+        position: relative;
+        top: 8px;
+        color: #e3e3e3;
+        font-size: 12px;
+      }
+
+      &:hover {
+        a,
+        p {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
